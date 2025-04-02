@@ -6,6 +6,8 @@
     position: relative;
     overflow: visible;
     will-change: transform;
+    content-visibility: auto;
+    contain: paint layout;
 }
 
 .banner-content {
@@ -18,6 +20,8 @@
     background-repeat: no-repeat;
     background-size: 100% auto;
     will-change: transform;
+    content-visibility: auto;
+    contain: paint layout;
 }
 
 .banner-logo {
@@ -47,41 +51,28 @@
 }
 
 @media (max-width: 768px) {
-    /* Banner mobile optimizations */
+    /* Banner mobile */
     .main-banner {
         min-height: auto;
         overflow: hidden;
-        contain: layout style paint;
-        content-visibility: auto;
     }
 
     .banner-content {
-        padding-top: 140%; /* Reduced from 180% for faster initial paint */
+        padding-top: 180%;
         padding-bottom: 0;
         background-image: url('../assets/banner-mobile-green.webp');
-        background-size: 100% 100%;  /* Fixed size instead of cover for better performance */
+        background-size: cover; 
         background-position: center center;
-        transform: translate3d(0, 0, 0); /* Hardware acceleration */
-        -webkit-transform: translate3d(0, 0, 0);
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-        perspective: 1000;
-        -webkit-perspective: 1000;
-        contain: layout paint style;
-        content-visibility: auto;
-        isolation: isolate;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
     }
 
     .banner-logo {
         max-width: 70%;
         top: 40%;
-        transform: translate3d(-50%, -50%, 0); /* Using translate3d for hardware acceleration */
-        -webkit-transform: translate3d(-50%, -50%, 0);
+        transform: translate(-50%, -50%) translateZ(0);
+        -webkit-transform: translate(-50%, -50%) translateZ(0);
         backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
-        perspective: 1000;
-        -webkit-perspective: 1000;
-        contain: layout paint style;
-        will-change: transform;
     }
 }
