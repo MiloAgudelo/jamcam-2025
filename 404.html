@@ -22,15 +22,15 @@
           fr: "/fr/404.html",
           pt: "/pt/404.html"
         };
-    
+      
         const browserLang = (navigator.language || "en").split("-")[0];
         const currentPath = window.location.pathname;
-    
+      
         const isAlreadyLocalized = Object.values(SUPPORTED_LANGUAGES).some(path =>
           currentPath.startsWith(path)
         );
-    
-        if (!isAlreadyLocalized && currentPath === "/404.html" && SUPPORTED_LANGUAGES[browserLang]) {
+      
+        if (!isAlreadyLocalized && SUPPORTED_LANGUAGES[browserLang]) {
           window.location.replace(SUPPORTED_LANGUAGES[browserLang]);
         }
       </script>
