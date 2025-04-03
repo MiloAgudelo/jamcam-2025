@@ -1,32 +1,40 @@
 {
-    "version": 2,
-    "rewrites": [
-      { "source": "/", "destination": "/es/" },
-      { "source": "/en", "destination": "/en/" },
-      { "source": "/en/(.*)", "destination": "/en/$1" },
-      { "source": "/es", "destination": "/es/" },
-      { "source": "/es/(.*)", "destination": "/es/$1" },
-      { "source": "/fr", "destination": "/fr/" },
-      { "source": "/fr/(.*)", "destination": "/fr/$1" },
-      { "source": "/pt", "destination": "/pt/" },
-      { "source": "/pt/(.*)", "destination": "/pt/$1" },
-      { "source": "/en/:path*", "destination": "/en/404.html" },
-      { "source": "/es/:path*", "destination": "/es/404.html" },
-      { "source": "/fr/:path*", "destination": "/fr/404.html" },
-      { "source": "/pt/:path*", "destination": "/pt/404.html" }
-    ],
-    "headers": [
-      {
-        "source": "/assets/fonts/(.*)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=31536000, immutable"
-          }
-        ]
-      }
-    ],
-    "cleanUrls": true,
-    "trailingSlash": false
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
+
+  "rewrites": [
+    { "source": "/", "destination": "/es/" },
+
+    { "source": "/en", "destination": "/en/" },
+    { "source": "/en/(.*)", "destination": "/en/$1" },
+
+    { "source": "/es", "destination": "/es/" },
+    { "source": "/es/(.*)", "destination": "/es/$1" },
+
+    { "source": "/fr", "destination": "/fr/" },
+    { "source": "/fr/(.*)", "destination": "/fr/$1" },
+
+    { "source": "/pt", "destination": "/pt/" },
+    { "source": "/pt/(.*)", "destination": "/pt/$1" },
+
+    { "source": "/en/:path*", "destination": "/en/404.html" },
+    { "source": "/es/:path*", "destination": "/es/404.html" },
+    { "source": "/fr/:path*", "destination": "/fr/404.html" },
+    { "source": "/pt/:path*", "destination": "/pt/404.html" },
+
+    { "source": "/:path*", "destination": "/es/404.html" }
+  ],
+
+  "headers": [
+    {
+      "source": "/assets/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
 }
-  
