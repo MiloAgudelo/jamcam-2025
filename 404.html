@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Redirecting...</title>
+    <meta name="description" content="La página que estás buscando no existe o ha sido movida.">
+    
+    <!-- Self-referencing canonical tag -->
+    <link rel="canonical" href="https://www.jamcam2025.com/">
+    
+    <!-- Robots meta para página 404 -->
+    <meta name="robots" content="noindex,follow">
+</head>
+<body>
+    <!-- Main JavaScript -->
+    <script>
+        const SUPPORTED_LANGUAGES = {
+          en: "/en/404.html",
+          es: "/es/404.html",
+          fr: "/fr/404.html",
+          pt: "/pt/404.html"
+        };
+    
+        const browserLang = (navigator.language || "en").split("-")[0];
+        const currentPath = window.location.pathname;
+    
+        const isAlreadyLocalized = Object.values(SUPPORTED_LANGUAGES).some(path =>
+          currentPath.startsWith(path)
+        );
+    
+        if (!isAlreadyLocalized && currentPath === "/404.html" && SUPPORTED_LANGUAGES[browserLang]) {
+          window.location.replace(SUPPORTED_LANGUAGES[browserLang]);
+        }
+      </script>
+</body>
+</html> 

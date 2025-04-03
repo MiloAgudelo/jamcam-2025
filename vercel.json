@@ -18,12 +18,7 @@
     { "source": "/pt", "destination": "/pt/" },
     { "source": "/pt/(.*)", "destination": "/pt/$1" },
 
-    { "source": "/en/:path*", "destination": "/en/404.html" },
-    { "source": "/es/:path*", "destination": "/es/404.html" },
-    { "source": "/fr/:path*", "destination": "/fr/404.html" },
-    { "source": "/pt/:path*", "destination": "/pt/404.html" },
-
-    { "source": "/:path*", "destination": "/es/404.html" }
+    { "source": "/:path*", "destination": "/404.html" }
   ],
 
   "headers": [

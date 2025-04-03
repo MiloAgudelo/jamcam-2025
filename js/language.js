@@ -139,21 +139,10 @@ function redirectToCorrectLanguage() {
     }
 }
 
-// Redirect to correct 404 page if inside fallback 404.html
-function redirectToLocalized404IfNeeded() {
-    const pathname = window.location.pathname;
-    if (pathname === "/404.html") {
-        const detectedLang = getBrowserLanguage();
-        const redirectUrl = `${SUPPORTED_LANGUAGES[detectedLang].path}/404.html`;
-        window.location.replace(redirectUrl);
-    }
-}
-
 // Initialize language handling
 document.addEventListener('DOMContentLoaded', () => {
     handleLanguageMenu();
     handleLanguageSelection();
     redirectToCorrectLanguage();
     restoreScrollPosition();
-    redirectToLocalized404IfNeeded();
 });
