@@ -118,7 +118,7 @@
     .error-content {
         padding-top: 180%;
         padding-bottom: 0;
-        background-image: url('../assets/404-banner-mobile.png');
+        background-image: url('../assets/404-banner-mobile.webp');
         background-size: cover;
         background-position: center center;
         transform: translateZ(0);
