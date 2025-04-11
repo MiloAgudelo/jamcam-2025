@@ -51,8 +51,20 @@
 
 .newsletter-buttons {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
+    max-width: 600px;
+}
+
+.newsletter-buttons-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 170px;
+}
+
+.newsletter-buttons-column:first-child {
+    margin-right: 5px;
 }
 
 .desktop-only {
@@ -65,11 +77,13 @@
 .register-btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 8px;
     background-color: var(--green);
     color: #FFFFFF;
-    padding: 12px 24px;
+    padding: 10px 18px;
     font-weight: 600;
+    font-size: 0.95rem;
     cursor: pointer;
     text-decoration: none;
     border: 2px solid var(--green);
@@ -77,7 +91,37 @@
     transform-origin: center;
     transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 130px;
 }
+
+.btn-green {
+    background-color: var(--green);
+    border-color: var(--green);
+}
+
+.btn-orange {
+    background-color: var(--orange);
+    border-color: var(--orange);
+}
+
+.btn-yellow {
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+}
+
+.btn-red {
+    background-color: var(--red);
+    border-color: var(--red);
+}
+
+.btn-pink {
+    background-color: var(--pink);
+    border-color: var(--pink);
+}
+
+
+
 
 .register-btn:hover {
     transform: scale(1.05);
@@ -85,8 +129,8 @@
 }
 
 .register-btn svg {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     fill: #FFFFFF;
 }
 
@@ -126,16 +170,22 @@
     .newsletter-buttons {
         justify-content: center;
         gap: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .newsletter-buttons-column {
+        align-items: center;
     }
     
     .register-btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        padding: 8px 16px;
+        font-size: 0.85rem;
     }
     
     .register-btn svg {
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
     }
 
     .desktop-only {

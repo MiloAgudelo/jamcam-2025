@@ -4,13 +4,8 @@
   "trailingSlash": false,
 
   "rewrites": [
-    { "source": "/", "destination": "/es/" },
-
     { "source": "/en", "destination": "/en/" },
     { "source": "/en/(.*)", "destination": "/en/$1" },
-
-    { "source": "/es", "destination": "/es/" },
-    { "source": "/es/(.*)", "destination": "/es/$1" },
 
     { "source": "/fr", "destination": "/fr/" },
     { "source": "/fr/(.*)", "destination": "/fr/$1" },

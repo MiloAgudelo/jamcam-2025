@@ -70,11 +70,11 @@
     <meta name="twitter:image" content="https://www.jamcam2025.com/assets/og-image.jpg">
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.jamcam2025.com/assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://www.jamcam2025.com/assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://www.jamcam2025.com/assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="https://www.jamcam2025.com/assets/favicon/site.webmanifest">
-    <link rel="mask-icon" href="https://www.jamcam2025.com/assets/favicon/safari-pinned-tab.svg" color="#58238B">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#58238B">
     <meta name="msapplication-TileColor" content="#58238B">
     <meta name="theme-color" content="#ffffff">
 
@@ -263,22 +263,40 @@
         
                     <h2 class="newsletter-title desktop-only">Mantente Informado</h2>
         
-                    <p class="newsletter-text">¿Tienes dudas sobre el evento? Encuentra el boletín #1</p>
+                    <p class="newsletter-text">¿Tienes dudas sobre el evento? Encuentra los boletines #1 y #2</p>
         
                     <div class="newsletter-buttons">
-                        <a href="../assets/docs/boletin-jamcam-1.pdf" class="register-btn" target="_blank" rel="noopener noreferrer">
-                            Boletín #1
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                                <path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM64 224H88c30.9 0 56 25.1 56 56s-25.1 56-56 56H80v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24H80v48h8zm72-64c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H176c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16h-8v96zm96-128h24c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-8v48h8z"/>
-                            </svg>
-                        </a>
-        
-                        <a href="../assets/docs/newsletter-jamcam-1.pdf" class="register-btn" target="_blank" rel="noopener noreferrer">
-                            Newsletter #1
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                                <path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM64 224H88c30.9 0 56 25.1 56 56s-25.1 56-56 56H80v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24H80v48h8zm72-64c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H176c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16h-8v96zm96-128h24c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-8v48h8z"/>
-                            </svg>
-                        </a>
+                        <div class="newsletter-buttons-column">
+                            <a href="../assets/docs/boletin-jamcam-1.pdf" class="register-btn btn-blue" target="_blank" rel="noopener noreferrer">
+                                Boletín #1
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                    <path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM64 224H88c30.9 0 56 25.1 56 56s-25.1 56-56 56H80v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24H80v48h8zm72-64c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H176c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16h-8v96zm96-128h24c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-8v48h8z"/>
+                                </svg>
+                            </a>
+                            
+                            <a href="../assets/docs/boletin-jamcam-2.pdf" class="register-btn btn-yellow" target="_blank" rel="noopener noreferrer">
+                                Boletín #2
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                    <path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM64 224H88c30.9 0 56 25.1 56 56s-25.1 56-56 56H80v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24H80v48h8zm72-64c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H176c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16h-8v96zm96-128h24c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-8v48h8z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        
+                        <div class="newsletter-buttons-column">
+                            <a href="../assets/docs/newsletter-jamcam-1.pdf" class="register-btn btn-blue" target="_blank" rel="noopener noreferrer">
+                                Newsletter #1
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                    <path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM64 224H88c30.9 0 56 25.1 56 56s-25.1 56-56 56H80v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24H80v48h8zm72-64c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H176c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16h-8v96zm96-128h24c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-8v48h8z"/>
+                                </svg>
+                            </a>
+                            
+                            <a href="../assets/docs/newsletter-jamcam-2.pdf" class="register-btn btn-yellow target="_blank" rel="noopener noreferrer">
+                                Newsletter #2
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                    <path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM64 224H88c30.9 0 56 25.1 56 56s-25.1 56-56 56H80v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24H80v48h8zm72-64c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H176c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16h-8v96zm96-128h24c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-8v48h8z"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

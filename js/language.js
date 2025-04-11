@@ -7,7 +7,7 @@ const SUPPORTED_LANGUAGES = {
     },
     'es': {
         code: 'es',
-        path: '/es',
+        path: '',
         browserCodes: ['es', 'es-ES', 'es-419', 'es-CO']
     },
     'fr': {
@@ -24,6 +24,12 @@ const SUPPORTED_LANGUAGES = {
 
 // Get browser language
 function getBrowserLanguage() {
+    // Check if user has manually selected a language
+    const userSelectedLang = localStorage.getItem('userLanguage');
+    if (userSelectedLang && SUPPORTED_LANGUAGES[userSelectedLang]) {
+        return userSelectedLang;
+    }
+
     const browserLang = navigator.language || navigator.userLanguage;
     
     // Find matching language configuration
@@ -107,6 +113,9 @@ function handleLanguageSelection() {
             const targetLang = SUPPORTED_LANGUAGES[langCode];
             
             if (targetLang) {
+                // Store user's language preference
+                localStorage.setItem('userLanguage', langCode);
+                
                 // Store current scroll position
                 storeScrollPosition();
                 
@@ -135,6 +144,20 @@ function redirectToCorrectLanguage() {
     if (!pathSegments.length || !Object.keys(SUPPORTED_LANGUAGES).includes(pathSegments[0])) {
         const detectedLang = getBrowserLanguage();
         const targetPath = SUPPORTED_LANGUAGES[detectedLang].path;
+        
+        // Don't redirect if the detected language is Spanish (root path) and we're already at root
+        if (detectedLang === 'es' && pathSegments.length === 0) {
+            return;
+        }
+        
+        // For Spanish (root path), just remove the current language prefix if any
+        if (detectedLang === 'es') {
+            const newPath = '/' + pathSegments.slice(1).join('/');
+            window.location.href = newPath;
+            return;
+        }
+        
+        // For other languages, redirect to their specific path
         window.location.href = `${targetPath}${currentPath}`;
     }
 }
