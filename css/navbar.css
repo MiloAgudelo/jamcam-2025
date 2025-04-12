@@ -24,7 +24,6 @@
     flex-shrink: 0;
     height: 130px;
     width: auto;
-    margin: 0 auto;
 }
 
 .navbar-logo img {
@@ -34,7 +33,7 @@
 }
 
 .navbar-menu {
-    display: none !important;
+    display: none;
 }
 
 .navbar-menu {
@@ -135,7 +134,11 @@
 }
 
 .navbar-toggle {
-    display: none !important;
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
 }
 
 .hamburger-icon {
