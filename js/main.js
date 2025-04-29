@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, {
-        threshold: 0.1, // Trigger when at least 10% of the element is visible
-        rootMargin: '0px 0px -50px 0px' // Trigger slightly before the element comes into view
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
 
     // Get all elements with animation classes
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setInterval(() => {
             currentIndex++;
             goToSlide(currentIndex);
-        }, 1500); // Change slide every 1.5 seconds
+        }, 1500);
     }
 
     const yearElement = document.getElementById('year');
@@ -151,24 +151,21 @@ document.addEventListener('DOMContentLoaded', function() {
         yearElement.textContent = new Date().getFullYear();
     }
 
-    // Language selector visibility control
+    // Language selector visibility
     const languageSelector = document.querySelector('.language-selector');
     const footer = document.querySelector('.footer');
 
-    function checkLanguageSelectorVisibility() {
-        const footerRect = footer.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        
-        if (footerRect.top <= windowHeight) {
-            languageSelector.style.opacity = '0';
-            languageSelector.style.pointerEvents = 'none';
-        } else {
-            languageSelector.style.opacity = '1';
-            languageSelector.style.pointerEvents = 'auto';
+    if (languageSelector && footer) {
+        function checkLanguageSelectorVisibility() {
+            const footerRect = footer.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            languageSelector.style.opacity = footerRect.top <= windowHeight ? '0' : '1';
+            languageSelector.style.pointerEvents = footerRect.top <= windowHeight ? 'none' : 'auto';
         }
-    }
 
-    window.addEventListener('scroll', checkLanguageSelectorVisibility);
-    window.addEventListener('resize', checkLanguageSelectorVisibility);
-    checkLanguageSelectorVisibility(); // Initial check
+        window.addEventListener('scroll', checkLanguageSelectorVisibility);
+        window.addEventListener('resize', checkLanguageSelectorVisibility);
+        checkLanguageSelectorVisibility();
+    }
 }); 

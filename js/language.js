@@ -44,20 +44,6 @@ function getBrowserLanguage() {
     return 'en';
 }
 
-// Store scroll position in session storage before redirecting
-function storeScrollPosition() {
-    sessionStorage.setItem('scrollPosition', window.scrollY);
-}
-
-// Restore scroll position after page load
-function restoreScrollPosition() {
-    const scrollPosition = sessionStorage.getItem('scrollPosition');
-    if (scrollPosition) {
-        window.scrollTo(0, parseInt(scrollPosition));
-        sessionStorage.removeItem('scrollPosition'); // Clear after use
-    }
-}
-
 // Handle language menu toggle
 function handleLanguageMenu() {
     const languageButton = document.querySelector('.language-button');
@@ -117,9 +103,6 @@ function handleLanguageSelection() {
             if (targetLang) {
                 // Store user's language preference
                 localStorage.setItem('userLanguage', langCode);
-                
-                // Store current scroll position
-                storeScrollPosition();
                 
                 if (is404Page) {
                     // Special handling for 404 pages
@@ -195,5 +178,4 @@ document.addEventListener('DOMContentLoaded', () => {
     handleLanguageMenu();
     handleLanguageSelection();
     redirectToCorrectLanguage();
-    restoreScrollPosition();
 });

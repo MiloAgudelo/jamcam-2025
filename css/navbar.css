@@ -168,89 +168,37 @@
     }
 
     .navbar-toggle {
-        display: block;
-        order: 1;
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
+        display: none;
     }
 
     .navbar-menu {
         display: flex;
-        position: fixed;
-        top: var(--nav-height-mobile);
-        left: 0;
-        right: 0;
-        width: 100vw;
-        background-color: var(--background-color);
-        flex-direction: column;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        flex-direction: row;
         align-items: center;
-        padding: 15px 0;
+        padding: 0;
         gap: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-20px);
-        transition: all 0.3s ease-in-out;
-        pointer-events: none;
-    }
-
-    .navbar-menu.active {
+        box-shadow: none;
         opacity: 1;
         visibility: visible;
-        transform: translateY(0);
+        transform: none;
         pointer-events: auto;
     }
 
     .navbar-menu li {
-        width: 100%;
-        text-align: center;
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: all 0.3s ease-in-out;
-    }
-
-    .navbar-menu.active li {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .navbar-menu li:nth-child(1) { transition-delay: 0.05s; }
-    .navbar-menu li:nth-child(2) { transition-delay: 0.1s; }
-    .navbar-menu li:nth-child(3) { transition-delay: 0.15s; }
-    .navbar-menu li:nth-child(4) { transition-delay: 0.2s; }
-    .navbar-menu li:nth-child(5) { transition-delay: 0.25s; }
-    .navbar-menu li:nth-child(6) { transition-delay: 0.3s; }
-    .navbar-menu li:nth-child(7) { transition-delay: 0.35s; }
-
-    .navbar-menu a {
-        padding: 12px 15px;
-        font-size: 1.1rem;
-        font-weight: 500;
-    }
-
-    .navbar-menu .voluntarios-link {
-        background-color: transparent;
-        font-size: 1.1rem;
-        font-weight: 500;
-        line-height: normal;
-        color: var(--text-color);
-        border: none;
-        padding: 12px 15px;
-    }
-
-    .navbar-menu a:hover {
-        transform: none;
-    }
-
-    .navbar-menu a::after {
         display: none;
     }
 
-    .navbar-menu .voluntarios-link:hover {
-        transform: none;
-        box-shadow: none;
+    .navbar-menu li:last-child {
+        display: block;
+    }
+
+    .navbar-menu .voluntarios-link {
+        margin-left: auto;
+        padding: 8px 12px;
+        font-size: 1rem;
     }
 }
 

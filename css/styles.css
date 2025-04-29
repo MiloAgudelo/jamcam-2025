@@ -34,8 +34,8 @@ img {
 /* Scroll Animation Classes */
 .fade-up {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fade-up.active {
@@ -45,7 +45,7 @@ img {
 
 .fade-in {
     opacity: 0;
-    transition: opacity 0.6s ease;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fade-in.active {
@@ -54,8 +54,8 @@ img {
 
 .slide-in-left {
     opacity: 0;
-    transform: translateX(-50px);
-    transition: all 0.6s ease;
+    transform: translateX(-30px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slide-in-left.active {
@@ -65,8 +65,8 @@ img {
 
 .slide-in-right {
     opacity: 0;
-    transform: translateX(50px);
-    transition: all 0.6s ease;
+    transform: translateX(30px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slide-in-right.active {
@@ -76,8 +76,8 @@ img {
 
 .scale-up {
     opacity: 0;
-    transform: scale(0.8);
-    transition: all 0.6s ease;
+    transform: scale(0.95);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .scale-up.active {
@@ -88,15 +88,15 @@ img {
 /* Add stagger delays for multiple items */
 .stagger-animation > * {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.stagger-animation > *:nth-child(1) { transition-delay: 0.1s; }
-.stagger-animation > *:nth-child(2) { transition-delay: 0.2s; }
-.stagger-animation > *:nth-child(3) { transition-delay: 0.3s; }
-.stagger-animation > *:nth-child(4) { transition-delay: 0.4s; }
-.stagger-animation > *:nth-child(5) { transition-delay: 0.5s; }
+.stagger-animation > *:nth-child(1) { transition-delay: 0.05s; }
+.stagger-animation > *:nth-child(2) { transition-delay: 0.1s; }
+.stagger-animation > *:nth-child(3) { transition-delay: 0.15s; }
+.stagger-animation > *:nth-child(4) { transition-delay: 0.2s; }
+.stagger-animation > *:nth-child(5) { transition-delay: 0.25s; }
 
 .stagger-animation > *.active {
     opacity: 1;

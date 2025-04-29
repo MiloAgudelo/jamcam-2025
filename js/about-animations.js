@@ -26,7 +26,7 @@ function initAboutAnimations() {
         const introText = introContent.querySelectorAll('.about-intro-description');
         introText.forEach((text, index) => {
             text.classList.add('fade-up');
-            text.style.transitionDelay = `${index * 0.2}s`;
+            text.style.transitionDelay = `${index * 0.1}s`;
             scrollAnimationObserver.observe(text);
         });
 
@@ -49,7 +49,7 @@ function initAboutAnimations() {
         const valueItems = valuesSection.querySelectorAll('.value-item');
         valueItems.forEach((item, index) => {
             item.classList.add('scale-up');
-            item.style.transitionDelay = `${index * 0.2}s`;
+            item.style.transitionDelay = `${index * 0.1}s`;
             scrollAnimationObserver.observe(item);
         });
     }
@@ -66,7 +66,7 @@ function initAboutAnimations() {
         const polaroids = polaroidSection.querySelectorAll('.polaroid');
         polaroids.forEach((polaroid, index) => {
             polaroid.classList.add('fade-up');
-            polaroid.style.transitionDelay = `${index * 0.15}s`;
+            polaroid.style.transitionDelay = `${index * 0.08}s`;
             scrollAnimationObserver.observe(polaroid);
         });
     }
@@ -83,7 +83,7 @@ function initAboutAnimations() {
         const cards = cardsSection.querySelectorAll('.card');
         cards.forEach((card, index) => {
             card.classList.add('slide-in-left');
-            card.style.transitionDelay = `${index * 0.2}s`;
+            card.style.transitionDelay = `${index * 0.1}s`;
             scrollAnimationObserver.observe(card);
         });
     }
