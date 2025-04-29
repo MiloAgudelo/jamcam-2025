@@ -1,0 +1,38 @@
+.about-banner {
+    margin-top: var(--nav-height);
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.banner-image.mobile {
+    display: none;
+}
+
+.banner-content {
+    position: relative;
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .about-banner {
+        margin-top: var(--nav-height-mobile);
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-image.desktop {
+        display: none;
+    }
+
+    .banner-image.mobile {
+        display: block;
+    }
+}

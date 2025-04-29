@@ -1,0 +1,155 @@
+.about-values {
+    padding: 80px 20px;
+    background-color: var(--orange);
+    border-radius: 30px;
+    color: white;
+    margin: 0 20px;
+}
+
+.about-values-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-values-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.value-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+}
+
+.value-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.value-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.value-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+}
+
+.value-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 300;
+    margin: 0;
+}
+
+.activity-blocks {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.activity-blocks p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.activity-blocks p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+    .about-values {
+        padding: 60px 20px;
+        margin: 0 15px;
+    }
+
+    .about-values-title {
+        font-size: 2.4rem;
+        margin-bottom: 40px;
+    }
+
+    .values-grid {
+        gap: 30px;
+    }
+
+    .value-item {
+        padding: 15px;
+    }
+
+    .value-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .value-title {
+        font-size: 1.4rem;
+    }
+
+    .value-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-values {
+        padding: 40px 20px;
+        margin: 0 10px;
+        border-radius: 20px;
+    }
+
+    .about-values-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .value-item {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .value-image {
+        width: 160px;
+        height: 160px;
+    }
+
+    .value-title {
+        font-size: 1.3rem;
+    }
+
+    .value-description {
+        font-size: 0.95rem;
+    }
+} 

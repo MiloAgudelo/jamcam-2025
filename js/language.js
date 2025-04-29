@@ -7,7 +7,8 @@ const SUPPORTED_LANGUAGES = {
     },
     'es': {
         code: 'es',
-        path: '',
+        path: '',  // Root path for index
+        subpath: '/es', // Subpath for other pages
         browserCodes: ['es', 'es-ES', 'es-419', 'es-CO']
     },
     'fr': {
@@ -105,6 +106,7 @@ function handleLanguageMenu() {
 function handleLanguageSelection() {
     const languageOptions = document.querySelectorAll('.language-option');
     const currentPath = window.location.pathname;
+    const is404Page = currentPath.includes('404');
 
     // Add click event listeners to language options
     languageOptions.forEach(option => {
@@ -119,8 +121,23 @@ function handleLanguageSelection() {
                 // Store current scroll position
                 storeScrollPosition();
                 
+                if (is404Page) {
+                    // Special handling for 404 pages
+                    window.location.href = `${targetLang.path}/404.html`;
+                    return;
+                }
+                
                 // Get the current path segments
                 const pathSegments = currentPath.split('/').filter(segment => segment);
+                
+                // Check if we're on the index page
+                const isIndex = pathSegments.length === 0 || 
+                              (pathSegments.length === 1 && pathSegments[0] === 'index.html') ||
+                              (pathSegments.length === 1 && Object.keys(SUPPORTED_LANGUAGES).includes(pathSegments[0])) ||
+                              (pathSegments.length === 2 && Object.keys(SUPPORTED_LANGUAGES).includes(pathSegments[0]) && pathSegments[1] === 'index.html');
+                
+                // Handle Spanish special case for non-index pages
+                const targetPath = (langCode === 'es' && !isIndex) ? targetLang.subpath : targetLang.path;
                 
                 // If we're already in a language directory, remove it
                 if (pathSegments.length > 0 && Object.keys(SUPPORTED_LANGUAGES).includes(pathSegments[0])) {
@@ -128,8 +145,14 @@ function handleLanguageSelection() {
                 }
                 
                 // Construct new path
-                const newPath = `${targetLang.path}/${pathSegments.join('/')}`;
-                window.location.href = newPath;
+                let newPath = targetPath;
+                if (pathSegments.length > 0 && !isIndex) {
+                    newPath += '/' + pathSegments.join('/');
+                } else if (currentPath.endsWith('/')) {
+                    newPath += '/';
+                }
+                
+                window.location.href = newPath || '/';
             }
         });
     });
@@ -143,22 +166,27 @@ function redirectToCorrectLanguage() {
     // Only redirect if we're not already in a language path
     if (!pathSegments.length || !Object.keys(SUPPORTED_LANGUAGES).includes(pathSegments[0])) {
         const detectedLang = getBrowserLanguage();
-        const targetPath = SUPPORTED_LANGUAGES[detectedLang].path;
+        const targetLang = SUPPORTED_LANGUAGES[detectedLang];
         
-        // Don't redirect if the detected language is Spanish (root path) and we're already at root
-        if (detectedLang === 'es' && pathSegments.length === 0) {
-            return;
+        // Check if we're on the index page
+        const isIndex = pathSegments.length === 0 || 
+                       (pathSegments.length === 1 && pathSegments[0] === 'index.html');
+        
+        // Handle Spanish special case for non-index pages
+        const targetPath = (detectedLang === 'es' && !isIndex) ? targetLang.subpath : targetLang.path;
+        
+        // Construct the new path maintaining the current page structure
+        let newPath = targetPath;
+        if (pathSegments.length > 0 && !isIndex) {
+            newPath += '/' + pathSegments.join('/');
+        } else if (currentPath.endsWith('/')) {
+            newPath += '/';
         }
         
-        // For Spanish (root path), just remove the current language prefix if any
-        if (detectedLang === 'es') {
-            const newPath = '/' + pathSegments.slice(1).join('/');
-            window.location.href = newPath;
-            return;
+        // Only redirect if we're going to a different path
+        if (newPath !== currentPath) {
+            window.location.href = newPath || '/';
         }
-        
-        // For other languages, redirect to their specific path
-        window.location.href = `${targetPath}${currentPath}`;
     }
 }
 
